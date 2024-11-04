@@ -118,6 +118,12 @@ Download
 
 [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7.apk)
 
+### [Revanced Extended For Android 6 & 7 forked by arghya:](https://github.com/arghya339/revanced-patches-android6-7/tree/revanced-extended)
+[All Architectures](../../releases/download/all/youtube-revanced-extended-android-6-7-arghya.apk)
+[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7-arghya.apk)
+[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-6-7-arghya.apk)
+[x86](../../releases/download/all/youtube-x86-revanced-extended-android-6-7-arghya.apk)
+[x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7-arghya.apk)
 
 ### [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5)
 
