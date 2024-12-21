@@ -6,10 +6,6 @@ mkdir ./release ./download
 #wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
 #unzip "./pup.zip" -d "./" > /dev/null 2>&1
 #pup="./pup"
-#Setup HTMLQ for download apk files
-wget -q -O ./htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz
-tar -xf "./htmlq.tar.gz" -C "./"
-HTMLQ="./htmlq"
 #Setup APKEditor for install combine split apks
 wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.1/APKEditor-1.4.1.jar
 APKEditor="./APKEditor.jar"
@@ -148,7 +144,6 @@ _req() {
 req() {
     _req "$1" "$2" "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.58 Mobile Safari/537.36"
 }
-
 dl_apk() {
 	local url=$1 regexp=$2 output=$3
 	if [[ -z "$4" ]] || [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
@@ -160,6 +155,9 @@ dl_apk() {
    	url="https://www.apkmirror.com$(req "$url" - | grep -oP 'id="download-link".*?href="\K[^"]+')"
 	#url="https://www.apkmirror.com$(req "$url" - | $pup -p --charset utf-8 'a.downloadButton attr{href}')"
    	#url="https://www.apkmirror.com$(req "$url" - | $pup -p --charset utf-8 'a#download-link attr{href}')"
+	if [[ "$url" == "https://www.apkmirror.com" ]]; then
+		exit 0
+	fi
 	req "$url" "$output"
 }
 get_apk() {
@@ -176,7 +174,7 @@ get_apk() {
 			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 		esac 
 	fi
-	if [ -z "$version" ] && [ "$version" != "latest" ]; then
+	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
 		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 			num=${BASH_REMATCH[1]}
 			if [ $num -ge 5 ]; then
@@ -187,6 +185,32 @@ get_apk() {
 		fi
 	fi
 	export version="$version"
+    if [[ -n "$version" ]]; then
+        version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
+        green_log "[+] Downloading $3 version: $version $5 $6 $7"
+        if [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
+            local base_apk="$2.apkm"
+        else
+            local base_apk="$2.apk"
+        fi
+        local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-$version-release/" \
+                              "$url_regexp" \
+                              "$base_apk" \
+                              "$5")
+        if [[ -f "./download/$base_apk" ]]; then
+            green_log "[+] Successfully downloaded $2"
+        else
+            red_log "[-] Failed to download $2"
+            exit 1
+        fi
+        if [[ $5 == "Bundle" ]]; then
+            green_log "[+] Merge splits apk to standalone apk"
+            java -jar $APKEditor m -i ./download/$2.apkm -o ./download/$2.apk > /dev/null 2>&1
+        elif [[ $5 == "Bundle_extract" ]]; then
+            unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .apkm)" > /dev/null 2>&1
+        fi
+        return 0
+    fi
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
@@ -239,16 +263,16 @@ patch() {
 	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu opt
 		if [ "$3" = inotia ]; then
-			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" f="--force=true" opt="--legacy-options=./src/options/$2.json"
+			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" opt="--legacy-options=./src/options/$2.json"
 			echo "Patching with Revanced-cli inotia"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}
 				if [ $num -ge 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" f="--force=true" opt="--legacy-options=./src/options/$2.json "
+					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt=""
 					echo "Patching with Revanced-cli version 5+"
 				elif [ $num -eq 4 ]; then
-					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="ks" pu="--purge=true" f="--force=true" opt="--options=./src/options/$2.json "
+					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="ks" pu="--purge=true" opt="--options=./src/options/$2.json "
 					echo "Patching with Revanced-cli version 4"
 				elif [ $num -eq 3 ]; then
 					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="_ks" pu="--purge=true" opt="--options=./src/options/$2.json "
@@ -259,9 +283,10 @@ patch() {
 				fi
 			fi
 		fi
-                unset GITHUB_REPOSITORY
-		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $f $a./download/$1.apk
+  		unset GITHUB_REPOSITORY
+		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
   		unset version
+		unset lock_version
 		unset excludePatches
 		unset includePatches
 	else 
