@@ -263,13 +263,13 @@ patch() {
 	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu opt
 		if [ "$3" = inotia ]; then
-			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" opt="--legacy-options=./src/options/$2.json"
+			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" f="--force=true" opt="--legacy-options=./src/options/$2.json"
 			echo "Patching with Revanced-cli inotia"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}
 				if [ $num -ge 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt=""
+					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" f="--force=true" opt=""
 					echo "Patching with Revanced-cli version 5+"
 				elif [ $num -eq 4 ]; then
 					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="ks" pu="--purge=true" opt="--options=./src/options/$2.json "
@@ -284,7 +284,7 @@ patch() {
 			fi
 		fi
   		unset GITHUB_REPOSITORY
-		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
+		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $f $a./download/$1.apk
   		unset version
 		unset lock_version
 		unset excludePatches
