@@ -95,7 +95,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget
+          apt-get install -y curl jq wget unzip
       - name: Check github connection
         id: check-gh-rve-anddea-stable
         run: bash src/etc/connection.sh
@@ -140,7 +140,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget  
+          apt-get install -y curl jq wget unzip  
       - name: Check github connection
         id: check-gh-rve-anddea-beta
         run: bash src/etc/connection.sh
@@ -185,7 +185,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget
+          apt-get install -y curl jq wget unzip
       - name: Check github connection
         id: check-gh-rve
         run: bash src/etc/connection.sh
@@ -230,7 +230,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget
+          apt-get install -y curl jq wget unzip
       - name: Check github connection
         id: check-gh-rve-beta
         run: bash src/etc/connection.sh
