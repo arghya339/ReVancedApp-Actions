@@ -1,5 +1,5 @@
 #!/bin/bash
-# YT Music Revanced Extended build
+# YT Music Revanced Extended Android 7 build
 source src/build/utils.sh
 
 # Download requirements
@@ -27,6 +27,7 @@ source src/build/utils.sh
     get_apk "com.google.android.apps.youtube.music" "youtube-music-android-7-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
     patch "youtube-music-android-7-x86_64" "revanced-extended" "inotia"
 
+    <<comment
 	# Patch YouTube Music Extended for android 5 & 6:
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced-extended"
@@ -48,3 +49,4 @@ source src/build/utils.sh
 	version="6.20.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-android-5-6-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-android-5-6-x86_64" "revanced-extended" "inotia"
+	comment

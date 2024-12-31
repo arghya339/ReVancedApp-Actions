@@ -19,8 +19,10 @@ on:
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
           - 'Revanced Extended Alpha'
-          - 'YT Music Revanced Extended'
-          - 'YT Music Revanced Extended Beta'
+          - 'YT Music Revanced Extended Android 7'
+          - 'YT Music Revanced Extended Android 7 Beta'
+          - 'YT Music Revanced Extended Android 5-6'
+          - 'YT Music Revanced Extended Android 5-6 Beta'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -283,9 +285,9 @@ jobs:
         id: release-rve-alpha
         if: steps.check-gh-rve-alpha.outputs.internet_error == '0'
         uses: ./.github/actions/release
-  patch_ytm_rve:
-    name: Patch YT Music Revanced Extended
-    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended' || inputs.org == 'YT Music Revanced Extended' }}
+  patch_ytm_rve7:
+    name: Patch YT Music Revanced Extended Android 7
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Android 7' || inputs.org == 'YT Music Revanced Extended Android 7' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -300,21 +302,21 @@ jobs:
           apt-get update
           apt-get install -y curl jq wget unzip
       - name: Check github connection
-        id: check-gh-ytm-rve
+        id: check-gh-ytm-rve7
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-ytm-rve
-        if: steps.check-gh-ytm-rve.outputs.internet_error == '0'
-        run: bash src/build/YT-Music-Revanced-Extended.sh
+        id: patch-ytm-rve7
+        if: steps.check-gh-ytm-rve7.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended-Android-7.sh
       - name: Cache
         uses: actions/upload-artifact@v4
         with:
-          name: Cache_ytm_rve
+          name: Cache_ytm_rve7
           path: |
             ./release/*.apk
-  release_ytm_rve:
-    name: Release YT Music Revanced Extended
-    needs: patch_ytm_rve
+  release_ytm_rve7:
+    name: Release YT Music Revanced Extended Android 7
+    needs: patch_ytm_rve7
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -322,13 +324,13 @@ jobs:
       - name: Cache
         uses: actions/download-artifact@v4
         with:
-          name: Cache_ytm_rve
+          name: Cache_ytm_rve7
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
-  patch_ytm_rve_beta:
-    name: Patch YT Music Revanced Extended Beta
-    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Beta' || inputs.org == 'YT Music Revanced Extended Beta' }}
+  patch_ytm_rve7_beta:
+    name: Patch YT Music Revanced Extended Android 7 Beta
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Android 7 Beta' || inputs.org == 'YT Music Revanced Extended Android 7 Beta' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -343,19 +345,19 @@ jobs:
           apt-get update
           apt-get install -y curl jq wget unzip
       - name: Check github connection
-        id: check-gh-ytm-rve-beta
+        id: check-gh-ytm-rve7-beta
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-ytm-rve-beta
-        if: steps.check-gh-ytm-rve-beta.outputs.internet_error == '0'
-        run: bash src/build/YT-Music-Revanced-Extended-Beta.sh
+        id: patch-ytm-rve7-beta
+        if: steps.check-gh-ytm-rve7-beta.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended-Android-7-Beta.sh
       - name: Cache
         uses: actions/upload-artifact@v4
         with:
-          name: Cache_ytm_rve_beta
-  release_ytm_rve_beta:
-    name: Release YT Music Revanced Extended Beta
-    needs: patch_ytm_rve_beta
+          name: Cache_ytm_rve7_beta
+  release_ytm_rve7_beta:
+    name: Release YT Music Revanced Extended Android 7 Beta
+    needs: patch_ytm_rve7_beta
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -363,7 +365,93 @@ jobs:
       - name: Cache
         uses: actions/download-artifact@v4
         with:
-          name: Cache_ytm_rve_beta
+          name: Cache_ytm_rve7_beta
+          path: ./release
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_ytm_rve56:
+    name: Patch YT Music Revanced Extended Android 5-6
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Android 5-6' || inputs.org == 'YT Music Revanced Extended Android 5-6' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve56
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve56
+        if: steps.check-gh-ytm-rve56.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended-Android-5-6.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve56
+          path: |
+            ./release/*.apk
+  release_ytm_rve56:
+    name: Release YT Music Revanced Extended Android 5-6
+    needs: patch_ytm_rve56
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve56
+          path: ./release
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_ytm_rve56_beta:
+    name: Patch YT Music Revanced Extended Android 5-6 Beta
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Android 5-6 Beta' || inputs.org == 'YT Music Revanced Extended Android 5-6 Beta' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve56-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve56-beta
+        if: steps.check-gh-ytm-rve56-beta.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended-Android-5-6-Beta.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve56_beta
+          path: |
+            ./release/*.apk
+  release_ytm_rve56_beta:
+    name: Release YT Music Revanced Extended Android 5-6 Beta
+    needs: patch_ytm_rve56_beta
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve56_beta
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release

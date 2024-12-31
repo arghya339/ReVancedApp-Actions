@@ -49,14 +49,22 @@ jobs:
         id: check-rve-alpha
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-alpha-revanced-extended.apk
-      - name: Check new patch YT Music Revanced Extended Android 5-6 & 7
-        id: check-ytm-rve
+      - name: Check new patch YT Music Revanced Extended Android 7
+        id: check-ytm-rve7
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-music-revanced-extended.apk
-      - name: Check new patch YT Music Revanced Extended Beta Android 5-6 & 7
-        id: check-ytm-rve-beta
+        run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-music-revanced-extended-android-7.apk
+      - name: Check new patch YT Music Revanced Extended Beta Android 7
+        id: check-ytm-rve7-beta
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-music-beta-revanced-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-music-beta-revanced-extended-android-7.apk
+      - name: Check new patch YT Music Revanced Extended Android 5-6
+        id: check-ytm-rve56
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-music-revanced-extended-android-5-6.apk
+      - name: Check new patch YT Music Revanced Extended Android 5-6 Beta
+        id: check-ytm-rve56-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-music-beta-revanced-extended-android-5-6.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -114,8 +122,10 @@ jobs:
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
-      check_ytm_rve: ${{ steps.check-ytm-rve.outputs.new_patch }}
-      check_ytm_rve_beta: ${{ steps.check-ytm-rve-beta.outputs.new_patch }}
+      check_ytm_rve7: ${{ steps.check-ytm-rve7.outputs.new_patch }}
+      check_ytm_rve7_beta: ${{ steps.check-ytm-rve7-beta.outputs.new_patch }}
+      check_ytm_rve56: ${{ steps.check-ytm-rve56.outputs.new_patch }}
+      check_ytm_rve56_beta: ${{ steps.check-ytm-rve56-beta.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
@@ -172,20 +182,34 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Alpha"
-  Patch-YT-Music-Revanced-Extended:
-    name: Patch YT Music Revanced Extended
+  Patch-YT-Music-Revanced-Extended-Android-7:
+    name: Patch YT Music Revanced Extended Android 7
     needs: check
-    if: ${{ needs.check.outputs.check_ytm_rve == 1 }}
+    if: ${{ needs.check.outputs.check_ytm_rve7 == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
-      org: "YT Music Revanced Extended"
-  Patch-YT-Music-Revanced-Extended-Beta:
-    name: Patch YT Music Revanced Extended Beta
+      org: "YT Music Revanced Extended Android 7"
+  Patch-YT-Music-Revanced-Extended-Android-7-Beta:
+    name: Patch YT Music Revanced Extended Android 7 Beta
     needs: check
-    if: ${{ needs.check.outputs.check_ytm_rve_beta == 1 }}
+    if: ${{ needs.check.outputs.check_ytm_rve7_beta == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
-      org: "YT Music Revanced Extended Beta"
+      org: "YT Music Revanced Extended Android 7 Beta"
+  Patch-YT-Music-Revanced-Extended-Android-5-6:
+    name: Patch YT Music Revanced Extended Android 5-6
+    needs: check
+    if: ${{ needs.check.outputs.check_ytm_rve56 == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "YT Music Revanced Extended Android 5-6"
+  Patch-YT-Music-Revanced-Extended-Android-5-6-Beta:
+    name: Patch YT Music Revanced Extended Android 5-6 Beta
+    needs: check
+    if: ${{ needs.check.outputs.check_ytm_rve56_beta == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "YT Music Revanced Extended Android 5-6 Beta"
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
     needs: check
