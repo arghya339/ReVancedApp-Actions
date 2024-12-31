@@ -57,8 +57,13 @@ source src/build/utils.sh
 
 	# Patch Reddit:
 	get_patches_key "reddit-rve"
-	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle"
-	patch "reddit-beta" "revanced-extended"
+	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
+    split_editor "reddit-beta" "reddit"
+    patch "reddit-beta" "revanced-extended" "inotia"
+    # Patch Arm64-v8a:
+    split_editor "reddit-beta" "reddit-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86_64 split_config.mdpi split_config.ldpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
+    get_patches_key "reddit-rve"
+    patch "reddit-arm64-v8a-beta" "revanced-extended" "inotia"
 	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
 	#get_apk "com.google.android.youtube" "youtube-lite-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	# Patch YouTube Lite Arm64-v8a:
