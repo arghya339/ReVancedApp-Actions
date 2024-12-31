@@ -76,6 +76,7 @@ source src/build/utils.sh
 	#split_editor "youtube-lite" "youtube-lite-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xhdpi split_config.xxxhdpi"
 	#patch "youtube-lite-armeabi-v7a" "revanced-extended" "inotia"
 
+	<<comment
 	# Patch YouTube Music Extended for android 7:
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced-extended"
@@ -119,3 +120,4 @@ source src/build/utils.sh
 	version="6.20.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-android-5-6-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-android-5-6-x86_64" "revanced-extended" "inotia"
+	comment

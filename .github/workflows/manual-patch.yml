@@ -19,6 +19,8 @@ on:
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
           - 'Revanced Extended Alpha'
+          - 'YT Music Revanced Extended'
+          - 'YT Music Revanced Extended Beta'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -280,6 +282,90 @@ jobs:
       - name: Releasing APK files
         id: release-rve-alpha
         if: steps.check-gh-rve-alpha.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_ytm_rve:
+    name: Patch YT Music Revanced Extended
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended' || inputs.org == 'YT Music Revanced Extended' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve
+        if: steps.check-gh-ytm-rve.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve
+          path: |
+            ./release/*.apk
+  release_ytm_rve:
+    name: Release YT Music Revanced Extended
+    needs: patch_ytm_rve
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve
+          path: ./release
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_ytm_rve_beta:
+    name: Patch YT Music Revanced Extended Beta
+    if: ${{ github.event.inputs.org == 'YT Music Revanced Extended Beta' || inputs.org == 'YT Music Revanced Extended Beta' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve-beta
+        if: steps.check-gh-ytm-rve-beta.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-Revanced-Extended-Beta.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve_beta
+  release_ytm_rve_beta:
+    name: Release YT Music Revanced Extended Beta
+    needs: patch_ytm_rve_beta
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve_beta
+          path: ./release
+      - name: Releasing APK files
         uses: ./.github/actions/release
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
