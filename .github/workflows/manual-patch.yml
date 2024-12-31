@@ -355,6 +355,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Cache_ytm_rve7_beta
+          path: |
+            ./release/*.apk
   release_ytm_rve7_beta:
     name: Release YT Music Revanced Extended Android 7 Beta
     needs: patch_ytm_rve7_beta
