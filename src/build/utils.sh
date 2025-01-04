@@ -259,7 +259,7 @@ get_apk() {
 patch() {
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
-		local p b m ks a pu opt
+		local p b m ks a pu opt f
 		if [ "$3" = inotia ]; then
 			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" f="--force=true" opt="--legacy-options=./src/options/$2.json"
 			echo "Patching with Revanced-cli inotia"
@@ -267,7 +267,7 @@ patch() {
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}
 				if [ $num -ge 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" f="--force=true" opt=""
+					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" f="--force=true" opt="" f=" --force"
 					echo "Patching with Revanced-cli version 5+"
 				elif [ $num -eq 4 ]; then
 					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="ks" pu="--purge=true" opt="--options=./src/options/$2.json "
