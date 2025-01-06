@@ -71,7 +71,7 @@
   "patchName" : "Settings for YouTube Music",
   "options" : [ {
     "key" : "settingsLabel",
-    "value" : "ReVancedX"
+    "value" : "ReVanced Extended"
   } ]
 }, {
   "patchName" : "Custom Shorts action buttons",
@@ -176,7 +176,7 @@
     "value" : "@string/about_key"
   }, {
     "key" : "settingsLabel",
-    "value" : "ReVancedX"
+    "value" : "ReVanced Extended"
   } ]
 }, {
   "patchName" : "SponsorBlock",
