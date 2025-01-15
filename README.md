@@ -35,7 +35,7 @@ Download
 > [!IMPORTANT] 
 > Beta versions mean using dev patches, not using beta apk files. Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
 >
-> This repository doesn't create new releases because it includes multiple projects, which would result in spamming releases every day. You should follow the dev repository for updates.
+> License owned by creator. If you like any modded app, please support the original author.
 > 
 ---
 
@@ -152,14 +152,14 @@ Download
 
 [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                                    | Beta version                                                                           |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
 
-### Revanced Extended:
+### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
 | [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)             | [Beta version](https://github.com/inotia00/revanced-patches/releases)                           | [Alpha version](https://github.com/inotia00/revanced-patches/releases)                           |
 |--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -186,7 +186,7 @@ Download
 | [x86](../../releases/download/all/youtube-music-android-5-6-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-music-beta-android-5-6-x86-revanced-extended.apk)                 |
 | [x86_64](../../releases/download/all/youtube-music-android-5-6-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-android-5-6-x86_64-revanced-extended.apk)           |
 
-### Revanced Extended forked by anddea:
+### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | Stable version                                                                         | Beta version                                                                         |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -197,7 +197,7 @@ Download
 
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                                        | Beta version                                                                                |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | 
@@ -209,6 +209,8 @@ Download
 
 ### [Piko:](https://github.com/crimera/piko)
 
+👉 [Offical author download link](https://github.com/crimera/twitter-apk/releases)
+
 | [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
 | [All Architectures](../../releases/download/all/twitter-stable-piko.apk)   | [All Architectures](../../releases/download/all/twitter-beta-piko.apk)   |
@@ -218,7 +220,7 @@ Download
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://play.google.com/store/apps/details?id=com.instagram.android)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
@@ -228,7 +230,7 @@ Download
 
 ### [Google Photos:](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                                | Beta version                                                                       |
 | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
@@ -239,7 +241,7 @@ Download
 
 [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
@@ -249,7 +251,7 @@ Download
 
 [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------------   | 
@@ -260,18 +262,17 @@ Download
 
 [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitch-revanced.apk)   | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk) |
 
 ---
 
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
-### Revanced Extended:
+### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
 | Stable version                                                                  | Beta version                                                                         |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | 
@@ -282,7 +283,7 @@ Download
 
 [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                          | Beta version                                                                 |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- | 
@@ -292,7 +293,7 @@ Download
 
 [![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](https://play.google.com/store/apps/details?id=com.tumblr)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
@@ -303,7 +304,7 @@ Download
 
 [![SoundCloud](https://img.shields.io/badge/soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white)](https://play.google.com/store/apps/details?id=com.soundcloud.android)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                             | Beta version                                                                    |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | 
@@ -314,7 +315,7 @@ Download
 
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                            | Beta version                                                   |
 | --------------------------------------------------------- | -------------------------------------------------------------- | 
@@ -324,7 +325,7 @@ Download
 
 ### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
 
-### Revanced:
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                      | Beta version                                                             |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------ | 
@@ -350,7 +351,7 @@ Download
 
 ### [Tasker:](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
-### Dropped Patches by indrastorms:
+### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
 
 [All Architectures](../../releases/download/all/tasker-indrastorms.apk)
 
@@ -358,7 +359,7 @@ Download
 
 ### [FX File Explorer:](https://play.google.com/store/apps/details?id=nextapp.fx)
 
-### Dropped Patches by indrastorms:
+### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
 
 [All Architectures](../../releases/download/all/fx-file-explorer-indrastorms.apk)
 
