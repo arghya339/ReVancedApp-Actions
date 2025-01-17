@@ -347,7 +347,8 @@ split_arch() {
 		--keystore=./src/_ks.keystore \
 		--legacy-options=./src/options/$2.json $excludePatches$includePatches \
 		--out=./release/$1-${archs[i]}-$2.apk\
-		./download/$1.apk
+		./download/$1.apk \
+		--force=true
 	else
 		red_log "[-] Not found $1.apk"
 		exit 1
