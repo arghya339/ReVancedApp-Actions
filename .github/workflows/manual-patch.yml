@@ -266,24 +266,44 @@ jobs:
     name: Patch Revanced Extended Alpha
     if: ${{ github.event.inputs.org == 'Revanced Extended Alpha' || inputs.org == 'Revanced Extended Alpha' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        run: [1, 2, 3]
+    container:
+      image: ubuntu:20.04
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
       - name: Check github connection
         id: check-gh-rve-alpha
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rve-alpha
         if: steps.check-gh-rve-alpha.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended-Alpha.sh ${{ matrix.run }}
+        run: bash src/build/Revanced-Extended-Alpha.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_rve_alpha
+          path: |
+            ./release/*.apk
+  release_rve_alpha:
+    name: Release Revanced Extended Alpha
+    needs: patch_rve_alpha
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve_alpha
+          path: ./release
       - name: Releasing APK files
-        id: release-rve-alpha
-        if: steps.check-gh-rve-alpha.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_ytm_rve7:
     name: Patch YT Music Revanced Extended Android 7
