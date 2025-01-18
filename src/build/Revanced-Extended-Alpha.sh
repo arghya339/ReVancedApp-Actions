@@ -30,7 +30,6 @@ source src/build/utils.sh
 	#patch "youtube-alpha-x86_64" "revanced-extended" "inotia"
     # Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	version="20.02.35"  # Temp YouTube v20.02.38 unavailable in APKMirror
 	get_apk "com.google.android.youtube" "youtube-alpha" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-alpha" "revanced-extended" "inotia"
 	# Split architecture Youtube:
