@@ -35,8 +35,8 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	version="latest"
-	get_apk "com.facebook.orca" "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
+	lock_version="1"
+	get_apk "com.facebook.orca" "messenger-arm64-v8a" "messenger" "facebook-2/messenger/facebook-messenger" "arm64-v8a" "nodpi"
 	patch "messenger-arm64-v8a" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
@@ -50,11 +50,11 @@ revanced_dl(){
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos"
-	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/photos" "arm64-v8a" "nodpi"
+	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/google-photos" "arm64-v8a" "nodpi"
 	patch "gg-photos-arm64-v8a" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
-	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/photos" "armeabi-v7a" "nodpi"
+	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a" "revanced"
 }
 4() {
@@ -62,20 +62,21 @@ revanced_dl(){
 	dl_gh "revanced-cli" "revanced" "latest"
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	version="37.0.4" #Force this version but missing settings https://github.com/ReVanced/revanced-patches/issues/4221#issuecomment-2564776573
-	get_apk "com.zhiliaoapp.musically" "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
-	split_editor "tiktok" "tiktok"
+	url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
+    url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+    req "$url" "tiktok.apk"
+	#get_apk "com.zhiliaoapp.musically" "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
+	#split_editor "tiktok" "tiktok"
 	patch "tiktok" "revanced"
  	# Patch Tiktok Arm64-v8a:
- 	split_editor "tiktok" "tiktok-arm64-v8a" "exclude" "split_config.armeabi_v7a"
-  	patch "tiktok-arm64-v8a" "revanced"
+ 	#split_editor "tiktok" "tiktok-arm64-v8a" "exclude" "split_config.armeabi_v7a"
+  	#patch "tiktok-arm64-v8a" "revanced"
 	rm -f *.rvp *.jar
 	revanced_dl
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
-	version="360.0.0.52.192"
-	get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
+	get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram" "arm64-v8a" "nodpi"
 	patch "instagram-arm64-v8a" "revanced"
 }
 5() {
@@ -100,7 +101,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle_extract"
+	get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr-fandom-art-chaos" "Bundle_extract"
 	split_editor "tumblr" "tumblr"
 	patch "tumblr" "revanced"
 	# Patch Tumblr Arm64-v8a:
@@ -109,7 +110,7 @@ revanced_dl(){
 	patch "tumblr-arm64-v8a" "revanced"
 	# Patch SoundCloud:
 	get_patches_key "soundcloud"
-	get_apk "com.soundcloud.android" "soundcloud" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle_extract"
+	get_apk "com.soundcloud.android" "soundcloud" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-play-music-songs" "Bundle_extract"
 	split_editor "soundcloud" "soundcloud"
 	patch "soundcloud" "revanced"
 	# Patch SoundCloud Arm64-v8a:
@@ -153,6 +154,14 @@ revanced_dl(){
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-armeabi-v7a" "revanced"
 }
+10() {
+	revanced_dl
+	# Patch Duolingo
+	get_patches_key "Duolingo"
+	lock_version="1"
+	get_apk "com.duolingo" "duolingo" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
+	patch "duolingo" "revanced"
+}
 case "$1" in
     1)
         1
@@ -180,5 +189,8 @@ case "$1" in
         ;;
     9)
         9
+        ;;
+	10)
+        10
         ;;
 esac
