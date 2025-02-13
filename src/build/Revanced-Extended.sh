@@ -29,7 +29,8 @@ source src/build/utils.sh
 	#patch "youtube-x86_64" "revanced-extended" "inotia"
 	# Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
+	version="20.02.38"
+        get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
 	patch "youtube" "revanced-extended" "inotia"
 	# Split architecture Youtube:
 	get_patches_key "youtube-revanced-extended"
@@ -40,22 +41,22 @@ source src/build/utils.sh
 	# Patch YouTube Music Extended:
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced-extended"
-	version="7.16.53"
+	version="8.05.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-arm64-v8a" "revanced-extended" "inotia"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-revanced-extended"
-	version="7.16.53"
+	version="8.05.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
 	# x86
 	get_patches_key "youtube-music-revanced-extended"
-	version="7.16.53"
+	version="8.05.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
 	patch "youtube-music-x86" "revanced-extended" "inotia"
 	# x86_64
 	get_patches_key "youtube-music-revanced-extended"
-	version="7.16.53"
+	version="8.05.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-x86_64" "revanced-extended" "inotia"	
 	
