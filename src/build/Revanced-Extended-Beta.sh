@@ -8,7 +8,7 @@ source src/build/utils.sh
 	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
 	# Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	version="20.02.34"
+	version="20.10.38"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta" "youtube-beta"
 	patch "youtube-beta" "revanced-extended" "inotia"
@@ -41,27 +41,28 @@ source src/build/utils.sh
 	# Patch YouTube Music Extended:
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced-extended"
-	version="8.05.50"
+	version="8.10.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-beta-arm64-v8a" "revanced-extended" "inotia"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-revanced-extended"
-	version="8.05.50"
+	version="8.10.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "revanced-extended" "inotia"
 	# x86
 	get_patches_key "youtube-music-revanced-extended"
-	version="8.05.50"
+	version="8.10.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
 	patch "youtube-music-beta-x86" "revanced-extended" "inotia"
 	# x86_64
 	get_patches_key "youtube-music-revanced-extended"
-	version="8.05.50"
+	version="8.10.51"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-beta-x86_64" "revanced-extended" "inotia"
 
 	# Patch Reddit:
 	get_patches_key "reddit-rve"
+	version="2025.10.0"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
     split_editor "reddit-beta" "reddit"
     patch "reddit-beta" "revanced-extended" "inotia"

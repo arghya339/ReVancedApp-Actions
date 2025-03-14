@@ -25,6 +25,8 @@ Simply, all you need to do is choose the app you want to use from the options be
 > 
 > If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
+> This repository is not like any other repository. It does not create new releases; it only releases new files.
+>
 > All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
 ---
@@ -317,6 +319,16 @@ Download
 | Stable version                                                           | Beta version                                                                  |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------   |
 | [All Architectures](../../releases/download/all/duolingo-revanced.apk)   | [All Architectures](../../releases/download/all/duolingo-beta-revanced.apk)   |
+---
+
+### [Google News:](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
+ 
+### [Revanced:](https://github.com/revanced/revanced-patches)
+ 
+| Stable version                                                             | Beta version                                                                    |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/googlenews-beta-arm64-v8a-revanced.apk) |
+ 
 ---
 
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
