@@ -8,7 +8,7 @@ source src/build/utils.sh
 	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
 	# Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	version="20.10.38"
+	version="20.10.40"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta" "youtube-beta"
 	patch "youtube-beta" "revanced-extended" "inotia"
@@ -62,7 +62,7 @@ source src/build/utils.sh
 
 	# Patch Reddit:
 	get_patches_key "reddit-rve"
-	version="2025.10.0"
+	version="2025.05.1"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
     split_editor "reddit-beta" "reddit"
     patch "reddit-beta" "revanced-extended" "inotia"
