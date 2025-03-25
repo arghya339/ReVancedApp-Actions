@@ -8,7 +8,7 @@ source src/build/utils.sh
 	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
 	# Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	version="20.10.40"
+	version="20.12.36"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta" "youtube-beta"
 	patch "youtube-beta" "revanced-extended" "inotia"

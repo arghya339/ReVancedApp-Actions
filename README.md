@@ -115,6 +115,8 @@ Download
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
+**If you have any problems opening apps, follow the instructions[HERE](../main/docs/Frequently%20Asked%20Questions.md#q-youtube-android-67-cant-load-anyvideo)**
+
 [All Architectures](../../releases/download/all/youtube-revanced-extended-android-6-7.apk)
 
 [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7.apk)
@@ -198,6 +200,8 @@ Download
 ---
 
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)
+
+**You have to remove the Messenger app before you install the Facebook ReVanced**
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
