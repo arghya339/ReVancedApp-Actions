@@ -1,9 +1,6 @@
 [ {
   "patchName" : "Change version code",
   "options" : [ {
-    "key" : "changeVersionCode",
-    "value" : true
-  }, {
     "key" : "versionCode",
     "value" : "2147483647"
   } ]
@@ -33,6 +30,15 @@
   "options" : [ {
     "key" : "customHeader",
     "value" : "branding/music/header/google_family"
+  } ]
+}, {
+  "patchName" : "Dark theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "materialYou",
+    "value" : true
   } ]
 }, {
   "patchName" : "Translations for YouTube Music",
@@ -70,8 +76,44 @@
 }, {
   "patchName" : "Settings for YouTube Music",
   "options" : [ {
-    "key" : "settingsLabel",
-    "value" : "ReVanced Extended"
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
+  } ]
+}, {
+  "patchName" : "Custom branding name for Reddit",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "Reddit"
+  } ]
+}, {
+  "patchName" : "Change package name",
+  "options" : [ {
+    "key" : "packageNameReddit",
+    "value" : "com.reddit.frontpage"
+  } ]
+}, {
+  "patchName" : "Settings for Reddit",
+  "options" : [ {
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
+  } ]
+}, {
+  "patchName" : "Snack bar components",
+  "options" : [ {
+    "key" : "cornerRadius",
+    "value" : "8.0dip"
+  }, {
+    "key" : "applyCornerRadiusToPlaylistBottomBar",
+    "value" : false
+  }, {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@color/yt_black3"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@color/yt_white3"
+  }, {
+    "key" : "strokeColor",
+    "value" : ""
   } ]
 }, {
   "patchName" : "Custom Shorts action buttons",
@@ -140,7 +182,7 @@
     "value" : ""
   }, {
     "key" : "selectedTranslations",
-    "value" : "ar, bg-rBG, de-rDE, el-rGR, es-rES, fr-rFR, hu-rHU, it-rIT, ja-rJP, ko-rKR, pl-rPL, pt-rBR, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
+    "value" : "ar, bg-rBG, de-rDE, el-rGR, es-rES, fr-rFR, hu-rHU, id-rID, in, it-rIT, ja-rJP, ko-rKR, pl-rPL, pt-rBR, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
   }, {
     "key" : "selectedStringResources",
     "value" : "af, am, ar, ar-rXB, as, az, b+es+419, b+sr+Latn, be, bg, bn, bs, ca, cs, da, de, el, en-rAU, en-rCA, en-rGB, en-rIN, en-rXA, en-rXC, es, es-rUS, et, eu, fa, fi, fr, fr-rCA, gl, gu, hi, hr, hu, hy, id, in, is, it, iw, ja, ka, kk, km, kn, ko, ky, lo, lt, lv, mk, ml, mn, mr, ms, my, nb, ne, nl, no, or, pa, pl, pt, pt-rBR, pt-rPT, ro, ru, si, sk, sl, sq, sr, sv, sw, ta, te, th, tl, tr, uk, ur, uz, vi, zh, zh-rCN, zh-rHK, zh-rTW, zu"
@@ -170,13 +212,19 @@
     "value" : false
   } ]
 }, {
+  "patchName" : "Spoof streaming data",
+  "options" : [ {
+    "key" : "useIOSClient",
+    "value" : true
+  } ]
+}, {
   "patchName" : "Settings for YouTube",
   "options" : [ {
     "key" : "insertPosition",
     "value" : "@string/about_key"
   }, {
-    "key" : "settingsLabel",
-    "value" : "ReVanced Extended"
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
   } ]
 }, {
   "patchName" : "SponsorBlock",
