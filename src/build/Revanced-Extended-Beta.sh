@@ -5,10 +5,9 @@ source src/build/utils.sh
 # Download requirements
 	dl_gh "revanced-patches revanced-cli" "inotia00" "prerelease"
 
-	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
 	# Patch YouTube:
 	get_patches_key "youtube-revanced-extended"
-	version="20.12.38"
+	version="20.12.46"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta" "youtube-beta"
 	patch "youtube-beta" "revanced-extended" "inotia"
@@ -62,7 +61,7 @@ source src/build/utils.sh
 
 	# Patch Reddit:
 	get_patches_key "reddit-rve"
-	version="2025.12.0"
+	version="2025.12.1"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
     split_editor "reddit-beta" "reddit"
     patch "reddit-beta" "revanced-extended" "inotia"
@@ -70,8 +69,7 @@ source src/build/utils.sh
     split_editor "reddit-beta" "reddit-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86_64 split_config.mdpi split_config.ldpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
     get_patches_key "reddit-rve"
     patch "reddit-arm64-v8a-beta" "revanced-extended" "inotia"
-	#Disabled because lastest RVE patch youtube not have splits apk on APKMirror
-	#get_apk "com.google.android.youtube" "youtube-lite-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	
 	# Patch YouTube Lite Arm64-v8a:
 	get_patches_key "youtube-revanced-extended"
 	split_editor "youtube-beta" "youtube-lite-beta-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xhdpi split_config.xxxhdpi"
