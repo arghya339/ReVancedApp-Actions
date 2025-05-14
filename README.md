@@ -105,9 +105,11 @@ Download
 
 <details>
   <summary>Lite version</summary>
+
+**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
   
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
-| ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
+| --------------------------------------------------------------------------------  | ----------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
 
@@ -158,10 +160,12 @@ Download
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                                                    | Beta version                                                                           |
+| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)    | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
+| [x86](../../releases/download/all/youtube-music-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk)           |
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
@@ -192,10 +196,12 @@ Download
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
-| Stable version                                                                         | Beta version                                                                         |
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
+| [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
 
 ---
 
@@ -252,6 +258,16 @@ Download
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) |
+
+---
+
+### [Spotjfy:](https://www.google.com/search?q=Spotjfy)
+
+### [Revanced](https://github.com/revanced/revanced-patches)
+
+#### ⚠️ Please read [WIKI](../main/docs/Frequently%20Asked%20Questions.md#q-what-is-spotjfy-and-how-can-i-download-it) before click download
+
+[Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
 
 ---
 
@@ -335,13 +351,23 @@ Download
  
 ---
 
+### [Photomath:](https://play.google.com/store/apps/details?id=com.microblink.photomath)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                             | Beta version                                                                    |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/photomath-revanced.apk)    | [All Architectures](../../releases/download/all/photomath-beta-revanced.apk)    |
+
+---
+
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                            | Beta version                                                   |
-| --------------------------------------------------------- | -------------------------------------------------------------- | 
-| [Arm64-v8a](../../releases/download/all/rar-revanced.apk) | [Arm64-v8a](../../releases/download/all/rar-beta-revanced.apk) |
+| Stable version                                                    | Beta version                                                           |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/rar-revanced.apk) | [All Architectures](../../releases/download/all/rar-beta-revanced.apk) |
 
 ---
 

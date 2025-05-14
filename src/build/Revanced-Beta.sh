@@ -63,7 +63,7 @@ revanced_dl(){
 	get_patches_key "tiktok"
 	#get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
 	#split_editor "tiktok-beta" "tiktok-beta"
-    url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
+    url="https://tiktok.en.uptodown.com/android/download/1026195874-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
     url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
     req "$url" "tiktok-beta.apk"
 	patch "tiktok-beta" "revanced"
@@ -122,13 +122,14 @@ revanced_dl(){
 7() {
 	revanced_dl
 	# Patch Lightroom:
-	#get_patches_key "lightroom"
- 	#version="9.2.0"
-	#get_apk "com.adobe.lrmobile" "lightroom-beta" "lightroom" "adobe/lightroom/lightroom"
-	#patch "lightroom-beta" "revanced"
+	get_patches_key "lightroom"
+ 	url="https://adobe-lightroom-mobile.en.uptodown.com/android/download/1033600808" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "lightroom-beta.apk"
+	patch "lightroom-beta" "revanced"
 	# Patch RAR:
 	get_patches_key "rar"
-	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
+	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "Bundle"
 	patch "rar-beta" "revanced"
 }
 8() {
@@ -154,19 +155,35 @@ revanced_dl(){
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "revanced"
+	# x86_64
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+	patch "youtube-music-x86_64" "revanced"
+	# x86
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+	patch "youtube-music-x86" "revanced"
 }
 10() {
 	revanced_dl
 	# Patch Duolingo
 	get_patches_key "Duolingo"
 	lock_version="1"
-	get_apk "com.duolingo" "duolingo-beta" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
+	get_apk "com.duolingo" "duolingo-beta" "duolingo-duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo-beta" "revanced"
 	# Patch Google News Arm64-v8a
  	get_patches_key "GoogleNews"
  	get_apk "com.google.android.apps.magazines" "googlenews-beta" "google-news" "google-inc/google-news/google-news" "Bundle_extract"
  	split_editor "googlenews-beta" "googlenews-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
  	patch "googlenews-beta-arm64-v8a" "revanced"
+}
+11() {
+	revanced_dl
+	# Patch Photomath
+	get_patches_key "Photomath"
+	get_apk "com.microblink.photomath" "photomath-beta" "photomath" "google-inc/photomath/photomath" "Bundle" "Bundle_extract"
+	split_editor "photomath-beta" "photomath-beta"
+	patch "photomath-beta" "revanced"
 }
 case "$1" in
     1)
@@ -198,5 +215,8 @@ case "$1" in
         ;;
 	10)
         10
+        ;;
+	11)
+        11
         ;;
 esac

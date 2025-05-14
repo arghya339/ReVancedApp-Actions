@@ -46,6 +46,14 @@ patch "youtube-music-stable-arm64-v8a" "anddea" "inotia"
 get_patches_key "youtube-music-rve-anddea"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-stable-armeabi-v7a" "anddea" "inotia"
+# x86_64
+get_patches_key "youtube-music-rve-anddea"
+get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+patch "youtube-music-stable-x86_64" "anddea" "inotia"
+# x86
+get_patches_key "youtube-music-rve-anddea"
+get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+patch "youtube-music-stable-x86" "anddea" "inotia"
 
 #Disabled because lastest RVE Anddea patch youtube not have splits apk on APKMirror
 #get_apk "com.google.android.youtube" "youtube-lite-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"

@@ -16,6 +16,7 @@ on:
         options:
           - 'Revanced'
           - 'Revanced Beta'
+          - 'Spotjfy'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
           - 'Revanced Extended Alpha'
@@ -44,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -67,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -559,7 +560,7 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve67-arghya339.outcome == 'skipped' || steps.release-rve67-arghya339.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run        
+        uses: ./.github/actions/re-run  
   patch_rve5:
     name: Patch RVX Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
@@ -579,6 +580,26 @@ jobs:
       - name: Releasing APK files
         id: release-rve5
         if: steps.check-gh-rve5.outputs.internet_error == '0'
+        uses: ./.github/actions/release      
+  patch_Spotjfy:
+    name: Patch Spotjfy
+    if: ${{ github.event.inputs.org == 'Spotjfy' || inputs.org == 'Spotjfy' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-spotjfy
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-spotjfy
+        if: steps.check-gh-spotjfy.outputs.internet_error == '0'
+        run: bash src/build/Spotjfy.sh
+      - name: Releasing APK files
+        id: release-spotjfy
+        if: steps.check-gh-spotjfy.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_BiliRoamingM:
     name: Patch BiliRoamingM
