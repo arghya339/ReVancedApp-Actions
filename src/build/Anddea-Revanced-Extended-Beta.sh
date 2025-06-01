@@ -58,9 +58,9 @@ patch "youtube-music-stable-x86" "anddea" "inotia"
 
 # Patch YouTube Lite Arm64-v8a:
 get_patches_key "youtube-rve-anddea"
-split_editor "youtube-lite-beta" "youtube-lite-beta-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xhdpi split_config.xxxhdpi"
+split_editor "youtube-beta" "youtube-lite-beta-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xhdpi split_config.xxxhdpi"
 patch "youtube-lite-beta-arm64-v8a" "anddea" "inotia"
 # Patch YouTube Lite Armeabi-v7a:
 get_patches_key "youtube-rve-anddea"
-split_editor "youtube-lite-beta" "youtube-lite-beta-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xhdpi split_config.xxxhdpi"
+split_editor "youtube-beta" "youtube-lite-beta-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xhdpi split_config.xxxhdpi"
 patch "youtube-lite-beta-armeabi-v7a" "anddea" "inotia"
