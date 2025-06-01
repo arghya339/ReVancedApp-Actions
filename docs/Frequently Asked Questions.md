@@ -10,19 +10,7 @@ The issue might be that your Android OS is preventing MicroG (GMS Core) from run
 
 [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 
-### Q: Youtube Android 6,7 Can't load anyvideo:
- 
-This is because Google force old version Youtube need to update. So you need fake your youtube version to higher version.
- 
-1. Open RVX Setting and then search `Spoof`
- 
-2. After that find `Spoof app version` toogle it on
- 
-3. Choose `Edit spoof app version` input `19.05.36` then restart RVX
-
 ---
-
-Credit: [@gnadgnaoh](https://github.com/gnadgnaoh/)
 
 ### Q: How do I use this repository for patching my own app?
 
@@ -36,28 +24,6 @@ Follow these steps to run the workflow for Manual Patch apps!
 ![](../docs/image/FAQ/patching-app-3.png)
 
 And then go to Readme click download your patched apps!
-
----
-
-### Q: What is Spotjfy? And how can I download it?
-
-"Spotjfy" not misspell, this mean [this app](https://www.google.com/search?q=Spotjfy)
-
-This app high DMCA chance takedown so you should patch by yourself
-
-You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
-
-![Click Action](../docs/image/FAQ/patching-app-1.png)
-
-Click "I understand my workflows, go ahead and enable them"
-
-![Click "I understand my workflows, go ahead and enable them"](../docs/image/FAQ/patching-app-2.png)
-
-Follow these steps to run the workflow to patch Spotjfy
-
-![](../docs/image/FAQ/patching-app-4.png)
-
-After the patch is done, go back to [your repository](../README.md#spotjfy) to download, or [Click here](../../../releases/download/all/spotjfy-arm64-v8a-revanced.apk) for a direct link download file.
 
 ---
 
