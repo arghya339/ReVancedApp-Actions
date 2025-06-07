@@ -8,7 +8,7 @@ dl_gh "revanced-cli" "inotia00" "latest"
 
 # Patch YouTube:
 get_patches_key "youtube-rve-anddea"
-version="20.16.40"
+version="20.21.37"
 get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 split_editor "youtube-beta" "youtube-beta"
 patch "youtube-beta" "anddea" "inotia"
@@ -41,18 +41,22 @@ patch "youtube-beta-x86_64" "anddea" "inotia"
 # Patch YouTube Music Extended:
 # Arm64-v8a
 get_patches_key "youtube-music-rve-anddea"
+version="8.18.51"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-beta-arm64-v8a" "anddea" "inotia"
 # Armeabi-v7a
 get_patches_key "youtube-music-rve-anddea"
+version="8.18.51"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-beta-armeabi-v7a" "anddea" "inotia"
 # x86_64
 get_patches_key "youtube-music-rve-anddea"
+version="8.18.51"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 patch "youtube-music-stable-x86_64" "anddea" "inotia"
 # x86
 get_patches_key "youtube-music-rve-anddea"
+version="8.18.51"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
 patch "youtube-music-stable-x86" "anddea" "inotia"
 

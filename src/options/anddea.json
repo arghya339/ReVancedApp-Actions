@@ -266,7 +266,7 @@
   "patchName" : "Settings for YouTube",
   "options" : [ {
     "key" : "insertPosition",
-    "value" : "@string/parent_tools_key"
+    "value" : "@string/about_key"
   }, {
     "key" : "rvxSettingsLabel",
     "value" : "RVX"
