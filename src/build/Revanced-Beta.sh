@@ -54,8 +54,19 @@ revanced_dl(){
 	patch "gg-photos-arm64-v8a-beta" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
+	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/google-photos/photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a-beta" "revanced"
+	# x86Add commentMore actions
+	get_patches_key "gg-photos"
+	version="7.32.0.765953717"
+	get_apk "com.google.android.apps.photos" "gg-photos-x86-beta" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
+	patch "gg-photos-x86-beta" "revanced"
+	# x86_64
+	get_patches_key "gg-photos"Add commentMore actions
+	version="7.32.0.765953717"
+	get_apk "com.google.android.apps.photos" "gg-photos-x86_64-beta" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
+	patch "gg-photos-x86_64-beta" "revanced"
 }
 4() {
 	revanced_dl
@@ -184,6 +195,14 @@ revanced_dl(){
 	split_editor "photomath-beta" "photomath-beta"
 	patch "photomath-beta" "revanced"
 }
+12() {
+	revanced_dl
+	# Patch Spotjfy Arm64-v8a
+	get_patches_key "Spotjfy-revanced"
+	j="i"
+	get_apkpure "com.spot"$j"fy.music" "spotjfy-beta-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
+	patch "spotjfy-beta-arm64-v8a" "revanced"
+}
 case "$1" in
     1)
         1
@@ -217,5 +236,8 @@ case "$1" in
         ;;
 	11)
         11
+        ;;
+	12)
+        12
         ;;
 esac

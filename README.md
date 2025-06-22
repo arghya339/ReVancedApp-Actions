@@ -250,6 +250,8 @@ Download
 | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
 | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk)     |
 | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-revanced.apk) | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-beta-revanced.apk) |
+| [x86](../../releases/download/all/gg-photos-x86-revanced.apk)                 | [x86](../../releases/download/all/gg-photos-x86-beta-revanced.apk)                 |Add commentMore actions
+| [x86_64](../../releases/download/all/gg-photos-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/gg-photos-x86_64-beta-revanced.apk)           |
 
 ---
 
@@ -267,7 +269,14 @@ Download
 
 ### [Revanced](https://github.com/revanced/revanced-patches)
 
-[Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
+| Stable version                                                            | Beta version                                                                   |Add commentMore actions
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
+| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-revanced.apk)   |
+
+### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | Add commentMore actions
+| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-anddea.apk)     |
 
 ---
 
