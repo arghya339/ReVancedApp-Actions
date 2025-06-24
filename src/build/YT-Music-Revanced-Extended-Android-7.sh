@@ -18,12 +18,12 @@ source src/build/utils.sh
 	patch "youtube-music-android-7-armeabi-v7a" "revanced-extended" "inotia"
     # x86
     get_patches_key "youtube-music-revanced-extended"
-    version="6.42.52"
+    version="6.42.55"
     get_apk "com.google.android.apps.youtube.music" "youtube-music-android-7-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
     patch "youtube-music-android-7-x86" "revanced-extended" "inotia"
     # x86_64
     get_patches_key "youtube-music-revanced-extended"
-    version="6.42.52"
+    version="6.42.55"
     get_apk "com.google.android.apps.youtube.music" "youtube-music-android-7-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
     patch "youtube-music-android-7-x86_64" "revanced-extended" "inotia"
 
