@@ -289,10 +289,10 @@ Download
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitch-revanced.apk)   | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)   |
-
+| Stable version                                                           | Beta version                                                                   |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | 
+| [All Architectures](../../releases/download/all/twitch-revanced.apk)     | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)      |
+| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk )   |
 ---
 
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
