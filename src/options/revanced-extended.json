@@ -5,6 +5,12 @@
     "value" : "2147483647"
   } ]
 }, {
+  "patchName" : "Hide ads",
+  "options" : [ {
+    "key" : "hideFullscreenAds",
+    "value" : true
+  } ]
+}, {
   "patchName" : "Custom branding icon for YouTube Music",
   "options" : [ {
     "key" : "appIcon",
@@ -47,7 +53,7 @@
     "value" : ""
   }, {
     "key" : "selectedTranslations",
-    "value" : "bg-rBG, bn, cs-rCZ, el-rGR, es-rES, fr-rFR, hu-rHU, id-rID, in, it-rIT, ja-rJP, ko-rKR, nl-rNL, pl-rPL, pt-rBR, ro-rRO, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
+    "value" : "bg-rBG, el-rGR, es-rES, fr-rFR, hu-rHU, id-rID, in, it-rIT, ja-rJP, ko-rKR, nl-rNL, pl-rPL, pt-rBR, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
   }, {
     "key" : "selectedStringResources",
     "value" : "af, am, ar, ar-rXB, as, az, b+es+419, b+sr+Latn, be, bg, bn, bs, ca, cs, da, de, el, en-rAU, en-rCA, en-rGB, en-rIN, en-rXA, en-rXC, es, es-rUS, et, eu, fa, fi, fr, fr-rCA, gl, gu, hi, hr, hu, hy, id, in, is, it, iw, ja, ka, kk, km, kn, ko, ky, lo, lt, lv, mk, ml, mn, mr, ms, my, nb, ne, nl, no, or, pa, pl, pt, pt-rBR, pt-rPT, ro, ru, si, sk, sl, sq, sr, sv, sw, ta, te, th, tl, tr, uk, ur, uz, vi, zh, zh-rCN, zh-rHK, zh-rTW, zu"
@@ -59,6 +65,15 @@
     "value" : "extension"
   } ]
 }, {
+  "patchName" : "Fix playback",
+  "options" : [ {
+    "key" : "spoofClient",
+    "value" : true
+  }, {
+    "key" : "spoofVideoStreams",
+    "value" : true
+  } ]
+}, {
   "patchName" : "GmsCore support",
   "options" : [ {
     "key" : "gmsCoreVendorGroupId",
@@ -67,15 +82,24 @@
     "key" : "checkGmsCore",
     "value" : true
   }, {
+    "key" : "disableCoreServices",
+    "value" : false
+  }, {
     "key" : "packageNameYouTube",
     "value" : "app.rvx.android.youtube"
   }, {
     "key" : "packageNameYouTubeMusic",
     "value" : "app.rvx.android.apps.youtube.music"
+  }, {
+    "key" : "patchAllManifest",
+    "value" : false
   } ]
 }, {
   "patchName" : "Settings for YouTube Music",
   "options" : [ {
+    "key" : "insertPosition",
+    "value" : "settings_header_about_youtube_music"
+  }, {
     "key" : "rvxSettingsLabel",
     "value" : "RVX"
   } ]
@@ -214,7 +238,10 @@
 }, {
   "patchName" : "Spoof streaming data",
   "options" : [ {
-    "key" : "useIOSClient",
+    "key" : "outlineIcon",
+    "value" : false
+  }, {
+    "key" : "useMobileWebClient",
     "value" : true
   } ]
 }, {
