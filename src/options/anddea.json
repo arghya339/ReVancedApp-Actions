@@ -1,24 +1,340 @@
-[
-	{
-	  "patchName" : "Custom branding name for YouTube",
-	  "options" : [ {
-		"key" : "AppName",
-		"value" : "RVX Anddea"
-	  } ]
-	}, {
-	  "patchName" : "Custom branding name for YouTube Music",
-	  "options" : [ {
-		"key" : "AppNameNotification",
-		"value" : "RVX Music Anddea"
-	  }, {
-		"key" : "AppNameLauncher",
-		"value" : "RVX Music Anddea"
-	  } ]
-	}, {
-	  "patchName" : "Spoof streaming data",
-	  "options" : [ {
-	    "key" : "useMobileWebClient",
-	    "value" : true
-	  } ]
-	}
-]
+[ {
+  "patchName" : "Change version code",
+  "options" : [ {
+    "key" : "versionCode",
+    "value" : "2147483647"
+  } ]
+}, {
+  "patchName" : "Hide ads",
+  "options" : [ {
+    "key" : "hideFullscreenAds",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Custom branding icon for YouTube Music",
+  "options" : [ {
+    "key" : "appIcon",
+    "value" : "./branding/music/launcher/google_family"
+  }, {
+    "key" : "changeSplashIcon",
+    "value" : true
+  }, {
+    "key" : "restoreOldSplashIcon",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "Custom branding name for YouTube Music",
+  "options" : [ {
+    "key" : "appNameNotification",
+    "value" : "YouTube Music RVX"
+  }, {
+    "key" : "appNameLauncher",
+    "value" : "YT Music RVX"
+  } ]
+}, {
+  "patchName" : "Custom header for YouTube Music",
+  "options" : [ {
+    "key" : "customHeader",
+    "value" : "./branding/music/header/google_family"
+  } ]
+}, {
+  "patchName" : "Dark theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "materialYou",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Translations for YouTube Music",
+  "options" : [ {
+    "key" : "customTranslations",
+    "value" : ""
+  }, {
+    "key" : "selectedTranslations",
+    "value" : "bg-rBG, bn, cs-rCZ, el-rGR, es-rES, fr-rFR, hu-rHU, id-rID, in, it-rIT, ja-rJP, ko-rKR, nl-rNL, pl-rPL, pt-rBR, ro-rRO, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
+  }, {
+    "key" : "selectedStringResources",
+    "value" : "af, am, ar, ar-rXB, as, az, b+es+419, b+sr+Latn, be, bg, bn, bs, ca, cs, da, de, el, en-rAU, en-rCA, en-rGB, en-rIN, en-rXA, en-rXC, es, es-rUS, et, eu, fa, fi, fil-rPH, fr, fr-rCA, gl, gu, hi, hr, hu, hy, id, in, is, it, iw, ja, ka, kk, km, kn, ko, ky, lo, lt, lv, mk, ml, mn, mr, ms, my, nb, ne, nl, no, or, pa, pl, pt, pt-rBR, pt-rPT, ro, ru, si, sk, sl, sq, sr, sv, sw, ta, te, th, tl, tr, uk, ur, uz, vi, zh, zh-rCN, zh-rHK, zh-rTW, zu"
+  } ]
+}, {
+  "patchName" : "Visual preferences icons for YouTube Music",
+  "options" : [ {
+    "key" : "settingsMenuIcon",
+    "value" : "extension"
+  }, {
+    "key" : "applyToAll",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Fix playback",
+  "options" : [ {
+    "key" : "spoofClient",
+    "value" : true
+  }, {
+    "key" : "spoofVideoStreams",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "GmsCore support",
+  "options" : [ {
+    "key" : "gmsCoreVendorGroupId",
+    "value" : "com.mgoogle"
+  }, {
+    "key" : "checkGmsCore",
+    "value" : true
+  }, {
+    "key" : "disableCoreServices",
+    "value" : false
+  }, {
+    "key" : "packageNameYouTube",
+    "value" : "app.rvx.android.youtube"
+  }, {
+    "key" : "packageNameYouTubeMusic",
+    "value" : "app.rvx.android.apps.youtube.music"
+  }, {
+    "key" : "patchAllManifest",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "Settings for YouTube Music",
+  "options" : [ {
+    "key" : "insertPosition",
+    "value" : "settings_header_about_youtube_music"
+  }, {
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
+  }, {
+    "key" : "settingsSummaries",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Custom branding name for Reddit",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "Reddit"
+  } ]
+}, {
+  "patchName" : "Change package name",
+  "options" : [ {
+    "key" : "packageNameReddit",
+    "value" : "com.reddit.frontpage"
+  } ]
+}, {
+  "patchName" : "Settings for Reddit",
+  "options" : [ {
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
+  } ]
+}, {
+  "patchName" : "Custom branding name for Spotify",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "Spotify"
+  } ]
+}, {
+  "patchName" : "Custom theme",
+  "options" : [ {
+    "key" : "backgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "overridePlayerGradientColor",
+    "value" : false
+  }, {
+    "key" : "enableBackgroundColorSecondary",
+    "value" : false
+  }, {
+    "key" : "backgroundColorSecondary",
+    "value" : "#FF121212"
+  }, {
+    "key" : "accentColor",
+    "value" : "#FF1ED760"
+  }, {
+    "key" : "accentColorPressed",
+    "value" : "#FF1ABC54"
+  }, {
+    "key" : "iconColor",
+    "value" : true
+  }, {
+    "key" : "minimalIcon",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "Spoof client",
+  "options" : [ {
+    "key" : "requestListenerPort",
+    "value" : 4345
+  }, {
+    "key" : "clientVersion",
+    "value" : "iphone-9.0.58.558.g200011c"
+  }, {
+    "key" : "hardwareMachine",
+    "value" : "iPhone16,1"
+  }, {
+    "key" : "systemVersion",
+    "value" : "17.7.2"
+  } ]
+}, {
+  "patchName" : "Change lyrics provider",
+  "options" : [ {
+    "key" : "lyricsProviderHost",
+    "value" : "lyrics.natanchiodi.fr"
+  } ]
+}, {
+  "patchName" : "Sanitize sharing links",
+  "options" : [ {
+    "key" : "shareParameters",
+    "value" : "context, pi, si, utm_source"
+  } ]
+}, {
+  "patchName" : "Snack bar components",
+  "options" : [ {
+    "key" : "cornerRadius",
+    "value" : "8.0dip"
+  }, {
+    "key" : "applyCornerRadiusToPlaylistBottomBar",
+    "value" : false
+  }, {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@color/yt_black3"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@color/yt_white3"
+  }, {
+    "key" : "strokeColor",
+    "value" : ""
+  } ]
+}, {
+  "patchName" : "Custom Shorts action buttons",
+  "options" : [ {
+    "key" : "iconType",
+    "value" : "round"
+  } ]
+}, {
+  "patchName" : "Custom branding icon for YouTube",
+  "options" : [ {
+    "key" : "appIcon",
+    "value" : "./branding/youtube/launcher/google_family"
+  }, {
+    "key" : "changeSplashIcon",
+    "value" : true
+  }, {
+    "key" : "restoreOldSplashAnimation",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Custom branding name for YouTube",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "YouTube RVX"
+  } ]
+}, {
+  "patchName" : "Custom double tap length",
+  "options" : [ {
+    "key" : "doubleTapLengthArrays",
+    "value" : "3, 5, 10, 15, 20, 30, 60, 120, 180"
+  } ]
+}, {
+  "patchName" : "Custom header for YouTube",
+  "options" : [ {
+    "key" : "customHeader",
+    "value" : "./branding/youtube/header/google_family"
+  } ]
+}, {
+  "patchName" : "Force player buttons background",
+  "options" : [ {
+    "key" : "BackgroundColor",
+    "value" : "?ytOverlayBackgroundMediumLight"
+  } ]
+}, {
+  "patchName" : "Hide shortcuts",
+  "options" : [ {
+    "key" : "explore",
+    "value" : false
+  }, {
+    "key" : "subscriptions",
+    "value" : false
+  }, {
+    "key" : "search",
+    "value" : false
+  }, {
+    "key" : "shorts",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "Theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
+  } ]
+}, {
+  "patchName" : "Translations for YouTube",
+  "options" : [ {
+    "key" : "customTranslations",
+    "value" : ""
+  }, {
+    "key" : "selectedTranslations",
+    "value" : "ar, az-rAZ, bg-rBG, da-rDK, de-rDE, el-rGR, es-rES, fil-rPH, fr-rFR, hu-rHU, id-rID, in, it-rIT, ja-rJP, ko-rKR, pl-rPL, pt-rBR, ru-rRU, tr-rTR, uk-rUA, vi-rVN, zh-rCN, zh-rTW"
+  }, {
+    "key" : "selectedStringResources",
+    "value" : "af, am, ar, ar-rXB, as, az, b+es+419, b+sr+Latn, be, bg, bn, bs, ca, cs, da, de, el, en-rAU, en-rCA, en-rGB, en-rIN, en-rXA, en-rXC, es, es-rUS, et, eu, fa, fi, fil-rPH, fr, fr-rCA, gl, gu, hi, hr, hu, hy, id, in, is, it, iw, ja, ka, kk, km, kn, ko, ky, lo, lt, lv, mk, ml, mn, mr, ms, my, nb, ne, nl, no, or, pa, pl, pt, pt-rBR, pt-rPT, ro, ru, si, sk, sl, sq, sr, sv, sw, ta, te, th, tl, tr, uk, ur, uz, vi, zh, zh-rCN, zh-rHK, zh-rTW, zu"
+  } ]
+}, {
+  "patchName" : "Visual preferences icons for YouTube",
+  "options" : [ {
+    "key" : "settingsMenuIcon",
+    "value" : "extension"
+  }, {
+    "key" : "applyToAll",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Overlay buttons",
+  "options" : [ {
+    "key" : "iconType",
+    "value" : "thin"
+  }, {
+    "key" : "bottomMargin",
+    "value" : "2.5dip"
+  }, {
+    "key" : "widerButtonsSpace",
+    "value" : false
+  }, {
+    "key" : "changeTopButtons",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "Spoof streaming data",
+  "options" : [ {
+    "key" : "outlineIcon",
+    "value" : false
+  }, {
+    "key" : "useMobileWebClient",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "Settings for YouTube",
+  "options" : [ {
+    "key" : "insertPosition",
+    "value" : "@string/about_key"
+  }, {
+    "key" : "rvxSettingsLabel",
+    "value" : "RVX"
+  }, {
+    "key" : "settingsSummaries",
+    "value" : true
+  } ]
+}, {
+  "patchName" : "SponsorBlock",
+  "options" : [ {
+    "key" : "outlineIcon",
+    "value" : false
+  }, {
+    "key" : "NewSegmentAlignment",
+    "value" : "right"
+  } ]
+} ]

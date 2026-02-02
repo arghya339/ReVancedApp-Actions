@@ -3,7 +3,7 @@
 	  "patchName" : "patch-options",
 	  "options" : [ {
 		"key" : "YouTube_AppName",
-		"value" : "RVX A5"
+		"value" : "YouTube RVX"
 	  }, {
 		"key" : "YouTube_PackageName",
 		"value" : "app.rvx.android.youtube"

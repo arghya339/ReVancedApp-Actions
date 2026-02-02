@@ -14,6 +14,7 @@ runs:
         [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)
         [Revanced Extended anddea](https://github.com/anddea/revanced-patches/releases)
         [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases)
+        [Revanced Extended for Android 6 & 7 arghya339](https://github.com/arghya339/revanced-patches-android6-7/releases)
         [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt
     - name: Release
@@ -21,7 +22,7 @@ runs:
       with:
         artifacts: |
           ./release/*.apk
-        name: Revanced & Revanced Extended
+        name: ReVancedApp Actions
         tag: all
         bodyFile: ${{ github.workspace }}-CHANGELOG.txt
         allowUpdates: true
