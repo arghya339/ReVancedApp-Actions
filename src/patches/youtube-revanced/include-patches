@@ -1,1 +1,2 @@
-Custom branding|-OappName="YouTube ReVanced"
+Custom branding|-OappName="YouTube ReVanced"|-OcustomIcon="./revanced_branding/youtube/launcher/google_family"
+Change header|-Ocustom="./revanced_branding/youtube/header/google_family"
