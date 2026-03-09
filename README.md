@@ -213,6 +213,18 @@ Download
 [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7.apk)
 
 
+### [Revanced Extended For Android 6 & 7 forked by arghya339:](https://github.com/arghya339/revanced-patches-android6-7/tree/revanced-extended)
+
+[All Architectures](../../releases/download/all/youtube-revanced-extended-android-6-7-arghya339.apk)
+
+[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7-arghya339.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-6-7-arghya339.apk)
+
+[x86](../../releases/download/all/youtube-x86-revanced-extended-android-6-7-arghya339.apk)
+
+[x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7-arghya339.apk)
+
 ### [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5)
 
 [All Architectures](../../releases/download/all/youtube-revanced-extended-android-5.apk)
@@ -679,6 +691,18 @@ Apps below not based on Revanced, but project still open-source.
 
 [Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
 
+</details>
+
+<details>
+  <summary>arghya339</summary>
+
+[Patches](https://github.com/arghya339/revanced-patches-android6-7) - [GPL-3.0](https://github.com/arghya339/revanced-patches-android6-7/blob/revanced-extended/LICENSE)
+
+[Integrations](https://github.com/arghya339/revanced-integrations) - [GPL-3.0](https://github.com/arghya339/revanced-integrations/blob/revanced-extended/LICENSE)
+
+[CLI](https://github.com/kitadai31/revanced-cli) - [GPL-3.0](https://github.com/kitadai31/revanced-cli/blob/main/LICENSE)
+
+[VancedMicroG](https://github.com/inotia00/VancedMicroG) - [Apache-2.0](https://github.com/inotia00/VancedMicroG/blob/master/LICENSE)
 </details>
 
 <details>

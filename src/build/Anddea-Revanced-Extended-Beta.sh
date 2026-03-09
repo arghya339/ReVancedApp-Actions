@@ -7,6 +7,7 @@ dl_gh "revanced-cli" "inotia00" "latest"
 
 # Patch YouTube:
 get_patches_key "youtube-rve-anddea"
+version="20.21.37"
 get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 split_editor "youtube-beta" "youtube-beta"
 patch "youtube-beta" "anddea" "inotia"

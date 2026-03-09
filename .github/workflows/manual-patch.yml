@@ -20,12 +20,15 @@ on:
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
+          - 'YT Music RVX Android 7'
+          - 'YT Music RVX Android 5-6'
           - 'Revanced Extended Arsclib'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
+          - 'RVX Android-6,7 arghya339'
           - 'Revanced Extended Android 5'
           - 'BiliRoamingM'
           - 'Scrazzz Patches'
@@ -305,6 +308,92 @@ jobs:
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
+  patch_ytm_rve7:
+    name: Patch YT Music Revanced Extended Android 7
+    if: ${{ github.event.inputs.org == 'YT Music RVX Android 7' || inputs.org == 'YT Music RVX Android 7' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve7
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve7
+        if: steps.check-gh-ytm-rve7.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-RVX-Android-7.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve7
+          path: |
+            ./release/*.apk
+  release_ytm_rve7:
+    name: Release YT Music Revanced Extended Android 7
+    needs: patch_ytm_rve7
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve7
+          path: ./release
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_ytm_rve56:
+    name: Patch YT Music Revanced Extended Android 5-6
+    if: ${{ github.event.inputs.org == 'YT Music RVX Android 5-6' || inputs.org == 'YT Music RVX Android 5-6' }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget unzip
+      - name: Check github connection
+        id: check-gh-ytm-rve56
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-ytm-rve56
+        if: steps.check-gh-ytm-rve56.outputs.internet_error == '0'
+        run: bash src/build/YT-Music-RVX-Android-5-6.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_ytm_rve56
+          path: |
+            ./release/*.apk
+  release_ytm_rve56:
+    name: Release YT Music Revanced Extended Android 5-6
+    needs: patch_ytm_rve56
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_ytm_rve56
+          path: ./release
+      - name: Releasing APK files
+        uses: ./.github/actions/release
   patch_rve_arsclib:
     name: Patch Revanced Extended Arsclib
     if: ${{ github.event.inputs.org == 'Revanced Extended Arsclib' || inputs.org == 'Revanced Extended Arsclib' }}
@@ -385,6 +474,29 @@ jobs:
         id: release-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/release
+  patch_rve67_arghya339:
+    name: Patch RVX Android 6,7 arghya339
+    if: ${{ github.event.inputs.org == 'RVX Android-6,7 arghya339' || inputs.org == 'RVX Android-6,7 arghya339' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve67-arghya339
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve67-arghya339
+        if: steps.check-gh-rve67-arghya339.outputs.internet_error == '0'
+        run: bash src/build/arghya339-RVX-Android-6-7.sh
+      - name: Releasing APK files
+        id: release-rve67-arghya339
+        if: steps.check-gh-rve67-arghya339.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rve67-arghya339.outcome == 'skipped' || steps.release-rve67-arghya339.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve5:
     name: Patch RVX Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
